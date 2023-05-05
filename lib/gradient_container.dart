@@ -3,16 +3,19 @@ import 'package:first_app/styled_text.dart';
 import 'package:flutter/material.dart';
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer(this.color1, this.color2, {super.key});
+
+  final Color color1;
+  final Color color2;
 
   @override
   Widget build(context) {
     return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(colors: [
-          Color.fromARGB(244, 33, 2, 43),
-          Color.fromARGB(244, 33, 7, 43)
-        ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+            colors: [color1, color2],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight),
       ),
       child: const Center(
         child: StyledText("Welcome Daniel"),
